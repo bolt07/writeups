@@ -58,7 +58,7 @@ I tried replaying traffic on ADSBExchange, but found no match.
 
 The twist: KLM doesn’t operate to Malpensa anymore, hinting at a "ghost" clue.
 
-After searching KLM flights from Amsterdam to Milan, the correct flight was:
+After searching KLM flights from Amsterdam to Milan on klm.nl and bruteforcing every flight code, the correct flight was:
 
     Flag: PAYATU{KL1615}
 
