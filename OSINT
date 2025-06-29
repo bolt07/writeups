@@ -1,0 +1,91 @@
+
+OSINT Challenge Writeup
+I completed all the OSINT challenges. Here's how I solved them:
+
+
+1. Flight of the Lurk3r
+We were given a ZIP file and asked to submit the MD5 hash of the file.
+I used a Python script (suggested by ChatGPT) to compute the hash.
+
+  Flag: PAYATU{MD5_HASH}
+
+2. The Lake Below
+
+The ZIP contained a photo taken from inside a plane.
+Using Google Reverse Image Search, I found this blog post:
+
+📎 velvetescape.com/plane-view-swiss-alps-lago-maggiore
+
+The name of the lake was in the blog title.
+
+    Flag: PAYATU{LAGO_MAGGIORE}
+
+3. The Town at the Edge
+
+We had to name the town on the right side of the river in the image.
+
+The blog mentioned:
+
+    Ascona (right side)
+
+    Locarno (left side)
+
+    Luino (Italy)
+
+    Lugano (top-right)
+
+Since the photo was from Switzerland:
+
+    ❌ Locarno (left side) and ❌ Luino (Italy) were eliminated
+
+    ✅ Between Ascona and Lugano, Lugano was correct
+
+    Flag: PAYATU{LUGANO}
+
+4. The Flight Code
+
+From the photo:
+
+    KLM was visible on the wing.
+
+    Blog said the flight was from Amsterdam to Milan Malpensa.
+
+    EXIF Metadata gave timestamp:
+    15 Oct 2021, 11:40 AM (UTC+2)
+
+I tried replaying traffic on ADSBExchange, but found no match.
+
+The twist: KLM doesn’t operate to Malpensa anymore, hinting at a "ghost" clue.
+
+After searching KLM flights from Amsterdam to Milan, the correct flight was:
+
+    Flag: PAYATU{KL1615}
+
+5. The Type of Wings
+
+On KLM's website, the flight was listed as a Boeing 737-800.
+Wikipedia confirms the aircraft code as B738.
+
+    Flag: PAYATU{B738}
+
+6. The Cryptic Phantom
+
+Using AperiSolve, I extracted EXIF metadata from the photo.
+Found a Base64 string in the Author tag → decoded to get a username.
+
+    Flag: PAYATU{lurk3r_in_p1ane}
+
+7. The Phantom Behind the Lens
+
+Searching for lurk3r_in_p1ane on Google led to an Instagram account.
+
+    Flag: PAYATU{amster_m_illiano}
+
+8. Bonus
+
+Challenge hinted at inspecting a post on the Instagram profile.
+A friend shared it with me over WhatsApp. In the captions, uppercase letters stood out.
+Combining them revealed the hidden message:
+
+     Flag: PAYATU{HERE_IS_A_B0NUS_P0INT}
+
