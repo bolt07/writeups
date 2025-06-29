@@ -7,6 +7,7 @@ I completed all the OSINT challenges. Here's how I solved them:
 We were given a ZIP file and asked to submit the MD5 hash of the file.
 I used a Python script (suggested by ChatGPT) to compute the hash.
 
+
   Flag: PAYATU{MD5_HASH}
 
 2. The Lake Below
